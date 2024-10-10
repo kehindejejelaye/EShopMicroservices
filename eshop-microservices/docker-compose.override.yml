@@ -30,6 +30,15 @@ services:
     restart: always
     ports:
       - "6379:6379"
+    
+  order_db:
+    container_name: order_db
+    environment:
+        - ACCEPT_EULA=Y
+        - MSSQL_SA_PASSWORD=1234567890P@ssword
+    restart: always
+    ports:
+        - "1433:1433"
 
   catalogapi:
     environment:
